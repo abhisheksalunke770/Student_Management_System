@@ -17,7 +17,14 @@ public class Student {
 	private int address;
 	private String Course;
 	private String email;
+	private int fees;
 	
+	public int getFees() {
+		return fees;
+	}
+	public void setFees(int fees) {
+		this.fees = fees;
+	}
 	public String getEmail() {
 		return email;
 	}
