@@ -10,68 +10,72 @@ public class Student {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private String name;
-	private int age;
-	private int mobno;
-	private int address;
-	private String Course;
-	private String email;
-	private int fees;
+	private int studentId;
+	private String studentFullName;
+	private String studentEmail;
+	private int studentAge;
+	private String studentCollageName;
+	private String studentCourse;
+	private String batchNumber;
+	private String batchMode;
+	private double feesPaid;
+	public int getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+	public String getStudentFullName() {
+		return studentFullName;
+	}
+	public void setStudentFullName(String studentFullName) {
+		this.studentFullName = studentFullName;
+	}
+	public String getStudentEmail() {
+		return studentEmail;
+	}
+	public void setStudentEmail(String studentEmail) {
+		this.studentEmail = studentEmail;
+	}
+	public int getStudentAge() {
+		return studentAge;
+	}
+	public void setStudentAge(int studentAge) {
+		this.studentAge = studentAge;
+	}
+	public String getStudentCollageName() {
+		return studentCollageName;
+	}
+	public void setStudentCollageName(String studentCollageName) {
+		this.studentCollageName = studentCollageName;
+	}
+	public String getStudentCourse() {
+		return studentCourse;
+	}
+	public void setStudentCourse(String studentCourse) {
+		this.studentCourse = studentCourse;
+	}
+	public String getBatchNumber() {
+		return batchNumber;
+	}
+	public void setBatchNumber(String batchNumber) {
+		this.batchNumber = batchNumber;
+	}
+	public String getBatchMode() {
+		return batchMode;
+	}
+	public void setBatchMode(String batchMode) {
+		this.batchMode = batchMode;
+	}
+	public double getFeesPaid() {
+		return feesPaid;
+	}
+	public void setFeesPaid(double feesPaid) {
+		this.feesPaid = feesPaid;
+	}
 	
-	public int getFees() {
-		return fees;
-	}
-	public void setFees(int fees) {
-		this.fees = fees;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public int getMobno() {
-		return mobno;
-	}
-	public void setMobno(int mobno) {
-		this.mobno = mobno;
-	}
-	public int getAddress() {
-		return address;
-	}
-	public void setAddress(int address) {
-		this.address = address;
-	}
-	public String getCourse() {
-		return Course;
-	}
-	public void setCourse(String course) {
-		Course = course;
-	}
+	
+	
 
-
-	
-	
-	
-	
 
 }
