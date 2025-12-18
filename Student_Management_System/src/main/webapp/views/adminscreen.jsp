@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,7 +183,67 @@ checked />
 </section>
 
 <section class="view" style="height:530px" id="view"> 
-  <h1>View Student</h1> 
+  <h1>Student Details..!</h1> 
+  <div class="container">
+   <table class="table table-hover" style="font-size:small"> 
+        <thead> 
+         <tr> 
+           <th>ID</th> 
+           <th>Student Name</th> 
+           <th>Student Email</th> 
+           <th>Age</th> 
+           <th>Collage Name</th> 
+           <th>Course Name</th> 
+           <th>Bath No</th> 
+           <th>Mode</th> 
+           <th>Fess Recived</th> 
+           <th>Actions</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+        <c:forEach items="${data}" var="s"> 
+          <tr> 
+           <td>${s.studentId}</td> 
+           <td>${s.studentFullName}</td> 
+           <td>${s.studentEmail}</td> 
+           <td>${s.studentAge}</td> 
+           <td>${s.studentCollageName}</td> 
+           <td>${s.studentCourse}</td> 
+           <td>${s.batchNumber}</td> 
+           <td>${s.batchMode}</td> 
+           <td>${s.feesPaid}</td> 
+           <td> 
+  
+           <div class="btn-group btn-group-sm" role="group" aria-label="..."> 
+           <button class="btn btn-outline-success">Pay Fees</button>
+  
+   			<button class="btn btn-outline-primary">Shift Batch</button> 
+         	  <a class="btn btn-outline-danger" href="delete?id=${s.studentId}">Remove</a> 
+            
+           </div> 
+             
+           </td> 
+            
+          </tr> 
+        </c:forEach> 
+         
+        </tbody> 
+      
+     </table> 
+  
+  <div>
+  <nav aria-label="Page navigation example">
+  
+  <ul class="pagination">
+  <li class="page-item"><a class="page-link" href="paging?pageNo=0">1</a></li>
+  <li class="page-item"><a class="page-link" href="paging?pageNo=1">2</a></li>
+  <li class="page-item"><a class="page-link" href="paging?pageNo=2">3</a></li>
+  
+  </ul>
+  
+  </nav>
+  </div>
+  </div>
  </section> 
  
 </div>
