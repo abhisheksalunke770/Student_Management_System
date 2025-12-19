@@ -56,6 +56,35 @@ public class StudentController {
 			m.addAttribute("data", list);
 			return "adminscreen";
 		}
+		@RequestMapping("/search")
+		public String getBatchStudent(@RequestParam String batchNumber ,Model m) {
+			List<Student> result=si.searchStudentByBatch(batchNumber);
+			if(result.size()>0) {
+				m.addAttribute("data",result);
+			}
+			else {
+				List<Student> student=si.getAllStudent();
+				m.addAttribute("data", student);
+				m.addAttribute("message","No records are avilable for the bacth'"+batchNumber+"'...!");
+			}
+			return "adminscreen";
+		}
+		
+		@RequestMapping("/fees")
+		public String onFees(@RequestParam int id,Model m) {
+			Student st=si.getSingleStudent(id);
+			m.addAttribute("st",st);
+			return "fees";
+		}
+		@RequestMapping("/payfees")
+		public String updateFees(@RequestParam int studentid,@RequestParam double ammount,Model m)
+		{
+			si.updateStudentFees(studentid,ammount);
+			List<Student> students=si.getAllStudent();
+			m.addAttribute("data",students);
+			
+			return "adminscreen";
+		}
 }
 		
 		
