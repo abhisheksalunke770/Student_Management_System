@@ -62,6 +62,15 @@ public class StudentServiceImpl implements StudentServiceI{
 		sr.save(st);
 	}
 
+	@Override
+	public void updateStudentBatch(int studentid, String batchNumber) {
+		Optional<Student> opStudent=sr.findById(studentid);
+		Student st=opStudent.get();
+		st.setBatchNumber(batchNumber);
+		sr.save(st);
+		
+	}
+
 	
 	
 }

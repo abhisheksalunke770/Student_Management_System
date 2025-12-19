@@ -85,6 +85,20 @@ public class StudentController {
 			
 			return "adminscreen";
 		}
+		@RequestMapping("/changeBatch")
+		public String onShift(@RequestParam int id,Model m) {
+			Student st=si.getSingleStudent(id);
+			m.addAttribute("st",st);
+			return "shiftBatch";
+		}
+		@RequestMapping("/shiftbatch")
+		public String updateShiftBatch(@RequestParam int studentid,@RequestParam String batchNumber,Model m ) {
+			si.updateStudentBatch(studentid,batchNumber);
+			List<Student> student =si.getAllStudent();
+			m.addAttribute("data",student);
+			return "adminscreen";
+		}
+		
 }
 		
 		

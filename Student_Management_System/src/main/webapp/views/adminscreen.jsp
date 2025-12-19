@@ -242,7 +242,7 @@ checked />
            <div class="btn-group btn-group-sm" role="group" aria-label="..."> 
            <a class="btn btn-outline-success" href="fees?id=${s.studentId}">Pay Fees</a>
   
-   			<button class="btn btn-outline-primary">Shift Batch</button> 
+   			<a class="btn btn-outline-primary" href="changeBatch?id=${s.studentId}">Shift Batch</a> 
          	  <a class="btn btn-outline-danger" href="delete?id=${s.studentId}">Remove</a> 
             
            </div> 
