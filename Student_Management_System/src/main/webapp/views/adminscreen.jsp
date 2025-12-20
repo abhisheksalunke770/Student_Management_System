@@ -201,7 +201,16 @@ checked />
                     <option value="FDJ-165">FDJ-165</option> 
                     <option value="REG-165">REG-165</option> 
                   </select> 
-                <button class="btn btn-outline-primary mb-1">Search</button>                 
+               
+                 <label class="form-label select-label text-success">Batch Mode</label> 
+                 <select class="select form-control-sm" name="batchMode"> 
+                    <option value="#">Select Batch Mode</option> 
+                    <option value="Online">Online</option> 
+                    <option value="Offline">Offline</option> 
+                    
+                  </select> 
+                <button class="btn btn-outline-primary mb-1">Search</button> 
+                 
            </form> 
    <marquee> 
         <h1 style="color: red;"> 
@@ -209,6 +218,8 @@ checked />
         </h1> 
    </marquee> 
 </div>
+
+
   <div class="container">
    <table class="table table-hover" style="font-size:large"> 
         <thead> 

@@ -25,7 +25,7 @@ public class StudentServiceImpl implements StudentServiceI{
 
 	@Override
 	public List<Student> getAllStudent() {
-		return sr.findAll();
+		return sr.findAll(PageRequest.of(0, 2)).getContent();
 		
 	}
 
@@ -42,15 +42,17 @@ public class StudentServiceImpl implements StudentServiceI{
 	}
 
 	@Override
-	public List<Student> searchStudentByBatch(String batchNumber) {
-		List<Student> batchStudents=sr.findAllByBatchNumber(batchNumber);
+	public List<Student> searchStudentByBatch(String batchNumber,String batchMode) {
+		List<Student> batchStudents=sr.findAllByBatchNumberAndBatchMode(batchNumber,batchMode);
 		return batchStudents;
 	}
 
 	@Override
 	public Student getSingleStudent(int id) {
 		Optional<Student> opStudent=sr.findById(id);
-		
+		if(opStudent.isPresent()) {
+			
+		}
 		return opStudent.get();
 	}
 

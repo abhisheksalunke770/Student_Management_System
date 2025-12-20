@@ -57,15 +57,15 @@ public class StudentController {
 			return "adminscreen";
 		}
 		@RequestMapping("/search")
-		public String getBatchStudent(@RequestParam String batchNumber ,Model m) {
-			List<Student> result=si.searchStudentByBatch(batchNumber);
+		public String getBatchStudent(@RequestParam String batchNumber ,@RequestParam String batchMode,Model m) {
+			List<Student> result=si.searchStudentByBatch(batchNumber,batchMode);
 			if(result.size()>0) {
 				m.addAttribute("data",result);
 			}
 			else {
 				List<Student> student=si.getAllStudent();
 				m.addAttribute("data", student);
-				m.addAttribute("message","No records are avilable for the bacth'"+batchNumber+"'...!");
+				m.addAttribute("message","No records are avilable for the bacth'"+batchNumber+""+batchMode+"'...!");
 			}
 			return "adminscreen";
 		}
